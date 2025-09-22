@@ -10,6 +10,7 @@ data:
   MYSQL_PASSWORD: #password
   MYSQL_USER: #username
   SECRET_KEY: #secretkey
-  ALGORITHM: HS256
+  ALGORITHM: #algorithm
   ACCESS_TOKEN_EXPIRE_MINUTES: "30"
+
 
