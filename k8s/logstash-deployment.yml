@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logstash
+  namespace: microservices
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logstash
+  template:
+    metadata:
+      labels:
+        app: logstash
+    spec:
+      containers:
+      - name: logstash
+        image: docker.elastic.co/logstash/logstash:8.15.0
+        ports:
+        - containerPort: 5044
+        volumeMounts:
+        - name: logstash-config
+          mountPath: /usr/share/logstash/pipeline/
+      volumes:
+      - name: logstash-config
+        configMap:
+          name: logstash-config
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logstash-config
+  namespace: microservices
+data:
+  logstash.conf: |
+    input {
+      tcp {
+        port => 5044
+        codec => json
+      }
+    }
+    output {
+      stdout { codec => rubydebug }
+      elasticsearch {
+        hosts => ["http://elasticsearch:9200"]
+        index => "microservices-logs-%{+YYYY.MM.dd}"
+      }
+    }
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: logstash
+  namespace: microservices
+spec:
+  selector:
+    app: logstash
+  ports:
+  - protocol: TCP
+    port: 5044
+    targetPort: 5044
+  type: ClusterIP

@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-secret
+  namespace: microservices
+type: Opaque
+data:
+  MYSQL_ROOT_PASSWORD: cm9vdA==  # base64 for "root"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+  namespace: microservices
+data:
+  MYSQL_DATABASE: user_service   # main database, still needed for default env
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: microservices
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:8.0
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: MYSQL_ROOT_PASSWORD
+          - name: MYSQL_DATABASE
+            valueFrom:
+              configMapKeyRef:
+                name: mysql-config
+                key: MYSQL_DATABASE
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: init-sql
+          mountPath: /docker-entrypoint-initdb.d
+      volumes:
+      - name: init-sql
+        configMap:
+          name: mysql-init-sql
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-init-sql
+  namespace: microservices
+data:
+  init.sql: |
+    CREATE DATABASE IF NOT EXISTS user_service;
+    CREATE DATABASE IF NOT EXISTS order_service;
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+  namespace: microservices
+spec:
+  selector:
+    app: mysql
+  ports:
+    - port: 3306
+      targetPort: 3306
+  type: ClusterIP
+

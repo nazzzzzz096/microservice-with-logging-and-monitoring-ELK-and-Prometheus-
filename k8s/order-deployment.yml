@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-service
+  namespace: microservices
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: order-service
+  template:
+    metadata:
+      labels:
+        app: order-service
+    spec:
+      containers:
+      - name: order-service
+        image: nazina/order-service:latest
+        command: ["uvicorn"]
+        args: ["main:app", "--host", "0.0.0.0", "--port", "8001"]
+        ports:
+        - containerPort: 8001
+        envFrom:
+        - configMapRef:
+            name: order-db-config
+        - secretRef:
+            name: order-db-secret
+
+        env:
+          - name: LOGSTASH_HOST
+            value: "logstash"
+          - name: LOGSTASH_PORT
+            value: "5044"

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: order-db-config
+  namespace: microservices
+data:
+  MYSQL_HOST: mysql-service
+  MYSQL_PORT: "3306"
+  MYSQL_DATABASE: order_service
+  MYSQL_USER: root
+  MYSQL_PASSWORD: root
+  SECRET_KEY: supersecretjwtkey
+  ALGORITHM: HS256
+  ACCESS_TOKEN_EXPIRE_MINUTES: "30"
+
