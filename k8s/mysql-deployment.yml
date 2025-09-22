@@ -5,7 +5,7 @@ metadata:
   namespace: microservices
 type: Opaque
 data:
-  MYSQL_ROOT_PASSWORD: cm9vdA==  # base64 for "root"
+  MYSQL_ROOT_PASSWORD:  # base64 for password
 
 ---
 apiVersion: v1
@@ -14,7 +14,7 @@ metadata:
   name: mysql-config
   namespace: microservices
 data:
-  MYSQL_DATABASE: user_service   # main database, still needed for default env
+  MYSQL_DATABASE:    # main database, still needed for default env
 
 ---
 apiVersion: apps/v1
@@ -80,4 +80,5 @@ spec:
     - port: 3306
       targetPort: 3306
   type: ClusterIP
+
 
