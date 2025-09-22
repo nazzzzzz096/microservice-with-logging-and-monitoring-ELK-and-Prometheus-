@@ -1,0 +1,63 @@
+2025-09-17 11:52:36,387 - order_service - INFO - Service starting up...
+2025-09-17 11:52:36,387 - order_service - INFO - Monitoring instrumentator started
+2025-09-17 11:52:51,995 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/
+2025-09-17 11:52:51,996 - order_service - INFO - Completed GET http://127.0.0.1:8001/ status=404 duration=0.00s
+2025-09-17 11:52:52,242 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/favicon.ico
+2025-09-17 11:52:52,248 - order_service - INFO - Completed GET http://127.0.0.1:8001/favicon.ico status=403 duration=0.01s
+2025-09-17 11:52:54,960 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/docs
+2025-09-17 11:52:54,961 - order_service - INFO - Completed GET http://127.0.0.1:8001/docs status=200 duration=0.00s
+2025-09-17 11:52:55,381 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/openapi.json
+2025-09-17 11:52:55,400 - order_service - INFO - Completed GET http://127.0.0.1:8001/openapi.json status=200 duration=0.02s
+2025-09-17 11:53:07,830 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/metrics
+2025-09-17 11:53:07,833 - order_service - INFO - Completed GET http://127.0.0.1:8001/metrics status=200 duration=0.00s
+2025-09-17 11:53:13,911 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/health
+2025-09-17 11:53:13,912 - order_service - INFO - Health check called
+2025-09-17 11:53:13,913 - order_service - INFO - Completed GET http://127.0.0.1:8001/health status=200 duration=0.00s
+2025-09-17 11:53:15,472 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/health
+2025-09-17 11:53:15,474 - order_service - INFO - Health check called
+2025-09-17 11:53:15,475 - order_service - INFO - Completed GET http://127.0.0.1:8001/health status=200 duration=0.00s
+2025-09-17 11:53:20,442 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/test-current-user
+2025-09-17 11:53:20,443 - order_service - INFO - Completed GET http://127.0.0.1:8001/test-current-user status=403 duration=0.00s
+2025-09-17 11:54:30,015 - order_service - INFO - Service shutting down
+2025-09-17 11:54:32,826 - order_service - INFO - Service starting up...
+2025-09-17 11:54:32,827 - order_service - INFO - Monitoring instrumentator started
+2025-09-17 11:56:09,299 - order_service - INFO - Service shutting down
+2025-09-17 11:56:12,228 - order_service - INFO - Service starting up...
+2025-09-17 11:56:12,229 - order_service - INFO - Monitoring instrumentator started
+2025-09-17 11:56:20,299 - order_service - INFO - Service shutting down
+2025-09-17 11:56:22,199 - order_service - INFO - Service starting up...
+2025-09-17 11:56:22,200 - order_service - INFO - Monitoring instrumentator started
+2025-09-17 11:58:16,404 - order_service - INFO - Service shutting down
+2025-09-17 11:58:21,971 - order_service - INFO - Service starting up...
+2025-09-17 11:58:21,974 - order_service - INFO - Monitoring instrumentator started
+2025-09-17 12:00:25,171 - order_service - INFO - Service shutting down
+2025-09-17 12:00:28,739 - order_service - INFO - Service starting up...
+2025-09-17 12:00:28,739 - order_service - INFO - Monitoring instrumentator started
+2025-09-17 12:01:35,473 - order_service - INFO - Service shutting down
+2025-09-17 12:01:38,645 - order_service - INFO - Service starting up...
+2025-09-17 12:01:38,646 - order_service - INFO - Monitoring instrumentator started
+2025-09-17 12:03:23,257 - order_service - INFO - Service shutting down
+2025-09-17 12:03:26,046 - order_service - INFO - Service starting up...
+2025-09-17 12:03:26,046 - order_service - INFO - Monitoring instrumentator started
+2025-09-17 12:04:54,634 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/docs
+2025-09-17 12:04:54,649 - order_service - INFO - Completed GET http://127.0.0.1:8001/docs status=200 duration=0.02s
+2025-09-17 12:04:54,954 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/openapi.json
+2025-09-17 12:04:55,103 - order_service - INFO - Completed GET http://127.0.0.1:8001/openapi.json status=200 duration=0.15s
+2025-09-17 12:05:04,076 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/metrics
+2025-09-17 12:05:04,121 - order_service - INFO - Completed GET http://127.0.0.1:8001/metrics status=200 duration=0.04s
+2025-09-17 12:05:08,780 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/health
+2025-09-17 12:05:08,781 - order_service - INFO - Health check called
+2025-09-17 12:05:08,783 - order_service - INFO - Completed GET http://127.0.0.1:8001/health status=200 duration=0.00s
+2025-09-17 12:05:13,782 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/test-current-user
+2025-09-17 12:05:14,192 - order_service - INFO - Completed GET http://127.0.0.1:8001/test-current-user status=200 duration=0.41s
+2025-09-17 12:05:24,522 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/orders/me
+2025-09-17 12:05:24,655 - order_service - INFO - Completed GET http://127.0.0.1:8001/orders/me status=200 duration=0.13s
+2025-09-17 12:05:35,919 - order_service - INFO - Incoming request: GET http://127.0.0.1:8001/1
+2025-09-17 12:05:35,935 - order_service - INFO - Completed GET http://127.0.0.1:8001/1 status=200 duration=0.02s
+2025-09-17 12:05:51,510 - order_service - INFO - Incoming request: POST http://127.0.0.1:8001/orders/
+2025-09-17 12:05:51,620 - order_service - INFO - Completed POST http://127.0.0.1:8001/orders/ status=200 duration=0.11s
+2025-09-17 12:06:37,342 - order_service - INFO - Incoming request: PUT http://127.0.0.1:8001/orders/4
+2025-09-17 12:06:37,469 - order_service - INFO - Completed PUT http://127.0.0.1:8001/orders/4 status=200 duration=0.13s
+2025-09-17 12:06:51,827 - order_service - INFO - Incoming request: DELETE http://127.0.0.1:8001/orders/3
+2025-09-17 12:06:51,857 - order_service - INFO - Completed DELETE http://127.0.0.1:8001/orders/3 status=200 duration=0.03s
+2025-09-17 12:07:30,134 - order_service - INFO - Service shutting down
